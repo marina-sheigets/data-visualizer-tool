@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let bundles = [
 	{
@@ -7,6 +8,7 @@ let bundles = [
 		hash: null,
 	},
 ];
+
 module.exports = {
 	entry: bundles.reduce((entry, bundle) => {
 		entry[bundle.name] = bundle.path;
@@ -27,10 +29,31 @@ module.exports = {
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
+			{
+				test: /\.css$/i,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							esModule: true,
+							modules: {
+								namedExport: true,
+								localIdentName: '[local]__[name]__visualizer',
+							},
+						},
+					},
+				],
+			},
 		],
 	},
 	mode: 'development',
 	devtool: 'source-map',
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'style.css',
+		}),
+	],
 	devServer: {
 		static: [
 			{

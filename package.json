@@ -10,6 +10,8 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"css-loader": "^7.1.2",
+		"mini-css-extract-plugin": "^2.9.4",
 		"reflect-metadata": "^0.2.2",
 		"ts-loader": "^9.5.4",
 		"typescript": "^5.9.3",
