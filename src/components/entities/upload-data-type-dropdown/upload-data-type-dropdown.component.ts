@@ -1,6 +1,7 @@
 import { singleton } from 'tsyringe';
 import { TagNameTypes } from '../../../types/TagNameTypes';
 import { BaseComponent } from '../../shared/base-component/base.component';
+import * as styles from './upload-data-type-dropdown.component.css';
 
 @singleton()
 export class UploadDataTypeDropdownComponent extends BaseComponent {
@@ -12,7 +13,7 @@ export class UploadDataTypeDropdownComponent extends BaseComponent {
 		{ value: 'table', label: 'Table' },
 	];
 	constructor() {
-		super({}, TagNameTypes.SELECT);
+		super(styles, TagNameTypes.SELECT);
 
 		this.initOptions();
 

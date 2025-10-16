@@ -1,0 +1,9 @@
+.rootClassName {
+	outline: none;
+	width: 200px;
+	height: 30px;
+
+	&:focus {
+		outline: none;
+	}
+}
