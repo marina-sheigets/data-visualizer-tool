@@ -6,7 +6,9 @@
 		"outDir": "./dist",
 		"rootDir": ".",
 		"strict": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
 	},
 	"include": ["entry.ts", "src"]
 }
