@@ -1,14 +1,12 @@
 import { singleton } from 'tsyringe';
 import { BaseComponent } from '../../shared/base-component/base.component';
-import { UploadDataTypeDropdownComponent } from '../upload-data-type-dropdown/upload-data-type-dropdown.component';
+import { UploadInputComponent } from '../../shared/upload-input/upload-input.component';
 
 @singleton()
 export class UploaderComponent extends BaseComponent {
-	constructor(
-		protected uploadDataTypeDropdownComponent: UploadDataTypeDropdownComponent //protected uploaderInputComponent: UploaderInputComponent
-	) {
+	constructor(protected uploadInputComponent: UploadInputComponent) {
 		super();
 
-		this.rootElement.append(this.uploadDataTypeDropdownComponent.rootElement);
+		this.rootElement.append(this.uploadInputComponent.rootElement);
 	}
 }
